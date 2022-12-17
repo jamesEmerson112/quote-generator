@@ -2,15 +2,11 @@ import React, { useState, useEffect } from 'react';
 import './QuoteBox.css';
 import axios from 'axios';
 
-const linkInspiration = 'https://api.api-ninjas.com/v1/quotes?category=inspirational';
+const link = 'https://api.api-ninjas.com/v1/quotes?category=';
 
 function QuoteBox(props) {
-  const [quote, setQuote] = useState('This is the quote');
-  const [author, setAuthor] = useState('- Author');
-
-  // useEffect(() => {
-  //   handleClicked('rejection');
-  // }, [])
+  const [quote, setQuote] = useState('Experience is the teacher of all things.');
+  const [author, setAuthor] = useState('- Julis Caesar');
 
 // author
 // :
@@ -27,13 +23,23 @@ function QuoteBox(props) {
     // const data = await getQuote(linkInspiration);
     // setQuote(data.quote);
     // setAuthor(data.author)
-    if(option === 'rejection')  alert('rejection');
-    else if (option === 'success')   alert('success');
-    else if (option === 'depression')   alert('depression');
+    if(option === 'rejection') {
+      const data = await getQuote(link, 'failure');
+      setQuote(data['quote']);
+      setAuthor('- ' + data['author']);
+    }
+    else if (option === 'success') {
+      const data = await getQuote(link, 'success');
+      setQuote(data['quote']);
+      setAuthor('- ' + data['author']);
+    }
+    else if (option === 'depression') {
+      const data = await getQuote(link, 'inspirational');
+      setQuote(data['quote']);
+      setAuthor('- ' + data['author']);
+    }
     else
       alert('404')
-
-    console.log('hello');
   }
 
   return (
@@ -50,8 +56,9 @@ function QuoteBox(props) {
   );
 }
 
-async function getQuote(link) {
-  const response = await axios.get('https://api.api-ninjas.com/v1/quotes?category=inspirational', {
+async function getQuote(link, options) {
+  const newLink = link + options;
+  const response = await axios.get(newLink, {
     headers: {
       'X-Api-Key': 'A25IAmlOT0YYhJITGzfxOA==mq4LyKJhthB3DSEY'
     }
