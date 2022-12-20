@@ -2,6 +2,11 @@ import React, { useState, useEffect } from 'react';
 import './QuoteBox.css';
 import axios from 'axios';
 
+// Import quotation mark
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faQuoteLeft } from '@fortawesome/free-solid-svg-icons';
+
+
 const link = 'https://api.api-ninjas.com/v1/quotes?category=';
 
 function QuoteBox(props) {
@@ -43,11 +48,14 @@ function QuoteBox(props) {
   }
 
   return (
-    <div className="App-header" id="quote-box">
-      <div className="Quote-box">
-        <h3 id="text">"{quote}"</h3>
-        <p id="author">{author}</p>
-        <a id="tweet-quote" href="twitter.com">Tweet Quote</a>
+    <div class="bg-zinc-100 w-fit h-fit p-8 mix-blend-screen text-transparent/100" id="quoteBox">
+      <FontAwesomeIcon icon={faQuoteLeft} className="text-xl" />
+      <div id="quote-text" class="flex">
+        <h3 id="text" class="grid justify-items-center" >{quote}</h3>
+      </div>
+      <p id="author" class="grid justify-items-end mt-2">{author}</p>
+      {/* <a id="tweet-quote" href="twitter.com">Tweet Quote</a> */}
+      <div id="buttons" class="flex justify-around mt-6" >
         <button id="new-quote-rejection" onClick={() => handleClicked('rejection')}>Rejection</button>
         <button id="new-quote-success" onClick={() => handleClicked('success')}>Success</button>
         <button id="new-quote-depression" onClick={() => handleClicked('depression')}>Depression</button>
