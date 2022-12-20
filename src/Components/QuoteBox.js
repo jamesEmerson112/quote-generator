@@ -2,6 +2,11 @@ import React, { useState, useEffect } from 'react';
 import './QuoteBox.css';
 import axios from 'axios';
 
+// Import quotation mark
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faQuoteLeft } from '@fortawesome/free-solid-svg-icons';
+
+
 const link = 'https://api.api-ninjas.com/v1/quotes?category=';
 
 function QuoteBox(props) {
@@ -43,12 +48,12 @@ function QuoteBox(props) {
   }
 
   return (
-    <div class="bg-zinc-100 w-fit h-fit text-transparent/100 p-8" id="quoteBox">
-      <i id="test">"</i>
+    <div class="bg-zinc-100 w-fit h-fit p-8 mix-blend-screen text-transparent/100" id="quoteBox">
+      <FontAwesomeIcon icon={faQuoteLeft} className="text-xl" />
       <div id="quote-text" class="flex">
         <h3 id="text" class="grid justify-items-center" >{quote}</h3>
       </div>
-      <p id="author" class="grid justify-items-end mt-6">{author}</p>
+      <p id="author" class="grid justify-items-end mt-2">{author}</p>
       {/* <a id="tweet-quote" href="twitter.com">Tweet Quote</a> */}
       <div id="buttons" class="flex justify-around mt-6" >
         <button id="new-quote-rejection" onClick={() => handleClicked('rejection')}>Rejection</button>
