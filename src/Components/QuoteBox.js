@@ -43,11 +43,14 @@ function QuoteBox(props) {
   }
 
   return (
-    <div className="App-header" id="quote-box">
-      <div className="Quote-box">
-        <h3 id="text">"{quote}"</h3>
-        <p id="author">{author}</p>
-        <a id="tweet-quote" href="twitter.com">Tweet Quote</a>
+    <div class="bg-zinc-100 w-fit h-fit text-transparent/100 p-8" id="quoteBox">
+      <i id="test">"</i>
+      <div id="quote-text" class="flex">
+        <h3 id="text" class="grid justify-items-center" >{quote}</h3>
+      </div>
+      <p id="author" class="grid justify-items-end mt-6">{author}</p>
+      {/* <a id="tweet-quote" href="twitter.com">Tweet Quote</a> */}
+      <div id="buttons" class="flex justify-around mt-6" >
         <button id="new-quote-rejection" onClick={() => handleClicked('rejection')}>Rejection</button>
         <button id="new-quote-success" onClick={() => handleClicked('success')}>Success</button>
         <button id="new-quote-depression" onClick={() => handleClicked('depression')}>Depression</button>
