@@ -48,7 +48,7 @@ function QuoteBox(props) {
   }
 
   return (
-    <div class="bg-zinc-100 w-fit h-fit p-8 mix-blend-screen text-transparent/100" id="quoteBox">
+    <div class="bg-zinc-100 w-fit h-fit p-8 mx-4 mix-blend-screen text-transparent/100 px-10  min-w-5 resize-animation" id="quoteBox">
       <FontAwesomeIcon icon={faQuoteLeft} className="text-xl" />
       <div id="quote-text" class="flex">
         <h3 id="text" class="grid justify-items-center" >{quote}</h3>
@@ -56,9 +56,9 @@ function QuoteBox(props) {
       <p id="author" class="grid justify-items-end mt-2">{author}</p>
       {/* <a id="tweet-quote" href="twitter.com">Tweet Quote</a> */}
       <div id="buttons" class="flex justify-around mt-6" >
-        <button id="new-quote-rejection" onClick={() => handleClicked('rejection')}>Rejection</button>
-        <button id="new-quote-success" onClick={() => handleClicked('success')}>Success</button>
-        <button id="new-quote-depression" onClick={() => handleClicked('depression')}>Depression</button>
+        <button id="new-quote-rejection" class="the-buttons" onClick={() => handleClicked('rejection')}>Rejection</button>
+        <button id="new-quote-success" class="the-buttons" onClick={() => handleClicked('success')}>Success</button>
+        <button id="new-quote-depression" class="the-buttons" onClick={() => handleClicked('depression')}>Depression</button>
       </div>
     </div>
   );
