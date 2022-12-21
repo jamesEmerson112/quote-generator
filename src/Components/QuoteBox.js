@@ -13,22 +13,8 @@ function QuoteBox(props) {
   const [quote, setQuote] = useState('Experience is the teacher of all things.');
   const [author, setAuthor] = useState('- Julis Caesar');
   const changeBgColor = props.changeBgColor;
-  // const [changeBgColor] = props;
-// author
-// :
-// "Robert Frost"
-// category
-// :
-// "inspirational"
-// quote
-// :
-// "The best way out is always through."
+
   const  handleClicked = async (option) => {
-    // getting
-  // Make a request for a user with a given ID
-    // const data = await getQuote(linkInspiration);
-    // setQuote(data.quote);
-    // setAuthor(data.author)
     changeBgColor();
     if(option === 'rejection') {
       const data = await getQuote(link, 'failure');
@@ -50,7 +36,7 @@ function QuoteBox(props) {
   }
 
   return (
-    <div class="transform-scale-90 relative w-4/5 quote-box" id="quoteBox">
+    <div class="transform-scale-90 relative w-fit quote-box" id="quoteBox">
       <div class="flex text-xl">
         <FontAwesomeIcon icon={faQuoteLeft} className="" />
         <div id="quote-text" class="font-sans font-bold leading-tight">

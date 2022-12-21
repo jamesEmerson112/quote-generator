@@ -1,7 +1,7 @@
 
 .quote-box {
   @apply rounded-md text-center
-  bg-zinc-100 h-fit p-8 mx-4 mix-blend-screen text-transparent/100 px-10
+  bg-zinc-100 h-fit p-8 mx-20 mix-blend-screen text-transparent/100 px-10
   resize-animation
   ;
 }
