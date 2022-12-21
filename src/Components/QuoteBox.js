@@ -48,14 +48,16 @@ function QuoteBox(props) {
   }
 
   return (
-    <div class=" min-w-5 resize-animation" id="quoteBox">
-      <FontAwesomeIcon icon={faQuoteLeft} className="text-xl" />
-      <div id="quote-text" class="flex">
-        <h3 id="text" class="grid justify-items-center" >{quote}</h3>
+    <div class="transform-scale-90 relative w-4/5 resize-animation" id="quoteBox">
+      <div class="flex">
+        <FontAwesomeIcon icon={faQuoteLeft} className="text-xl" />
+        <div id="quote-text" class="font-sans font-bold text-xl leading-tight">
+          <h3 id="text" class="grid justify-items-center" >{quote}</h3>
+        </div>
       </div>
       <p id="author" class="grid justify-items-end mt-2">{author}</p>
       {/* <a id="tweet-quote" href="twitter.com">Tweet Quote</a> */}
-      <div id="buttons" class="flex justify-around mt-6
+      <div id="buttons" class="flex justify-between mt-6
       " >
         <button id="new-quote-rejection" class="the-buttons" onClick={() => handleClicked('rejection')}>Rejection</button>
         <button id="new-quote-success" class="the-buttons" onClick={() => handleClicked('success')}>Success</button>
