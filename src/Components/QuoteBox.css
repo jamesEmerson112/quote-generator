@@ -12,7 +12,7 @@
 
 .the-buttons{
   @apply
-  rounded-md
+  rounded
   text-white
   bg-zinc-900
   w-auto

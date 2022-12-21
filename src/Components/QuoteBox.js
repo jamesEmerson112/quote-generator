@@ -12,7 +12,8 @@ const link = 'https://api.api-ninjas.com/v1/quotes?category=';
 function QuoteBox(props) {
   const [quote, setQuote] = useState('Experience is the teacher of all things.');
   const [author, setAuthor] = useState('- Julis Caesar');
-
+  const changeBgColor = props.changeBgColor;
+  // const [changeBgColor] = props;
 // author
 // :
 // "Robert Frost"
@@ -28,6 +29,7 @@ function QuoteBox(props) {
     // const data = await getQuote(linkInspiration);
     // setQuote(data.quote);
     // setAuthor(data.author)
+    changeBgColor();
     if(option === 'rejection') {
       const data = await getQuote(link, 'failure');
       setQuote(data['quote']);
