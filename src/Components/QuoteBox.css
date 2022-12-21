@@ -9,7 +9,6 @@
 .resize-animation {
   @apply rounded-md text-center
   bg-zinc-100 h-fit p-8 mx-4 mix-blend-screen text-transparent/100 px-10
-  box-content
   ;
 }
 
@@ -17,7 +16,9 @@
   @apply
   rounded-md
   text-white
-  bg-black
-  box-content
+  bg-zinc-900
+  w-auto
+  hover:bg-black
   p-1;
+
 }
