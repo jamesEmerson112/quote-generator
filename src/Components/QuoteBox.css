@@ -1,15 +1,13 @@
-.Quote-box {
-  background-color: antiquewhite;
-  width: fit-content;
-  height: fit-content;
-  color: black;
-  padding: 8%;
-}
 
-.resize-animation {
+.quote-box {
   @apply rounded-md text-center
   bg-zinc-100 h-fit p-8 mx-4 mix-blend-screen text-transparent/100 px-10
+  resize-animation
   ;
+}
+
+.resize-animation{
+  /* @apply ; */
 }
 
 .the-buttons{
