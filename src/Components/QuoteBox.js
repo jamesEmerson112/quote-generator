@@ -49,9 +49,9 @@ function QuoteBox(props) {
 
   return (
     <div class="transform-scale-90 relative w-4/5 resize-animation" id="quoteBox">
-      <div class="flex">
-        <FontAwesomeIcon icon={faQuoteLeft} className="text-xl" />
-        <div id="quote-text" class="font-sans font-bold text-xl leading-tight">
+      <div class="flex text-xl">
+        <FontAwesomeIcon icon={faQuoteLeft} className="" />
+        <div id="quote-text" class="font-sans font-bold leading-tight">
           <h3 id="text" class="grid justify-items-center" >{quote}</h3>
         </div>
       </div>
