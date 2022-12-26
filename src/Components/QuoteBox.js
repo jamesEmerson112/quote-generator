@@ -14,22 +14,22 @@ function QuoteBox(props) {
   const [author, setAuthor] = useState('- Julis Caesar');
   const changeBgColor = props.changeBgColor;
 
-  const  handleClicked = async (option) => {
+  const updateQuote = async (keyword) => {
+    const data = await getQuote(link, keyword);
+    setQuote(data['quote']);
+    setAuthor('- ' + data['author']);
     changeBgColor();
+  }
+
+  const handleClicked = async (option) => {
     if(option === 'rejection') {
-      const data = await getQuote(link, 'failure');
-      setQuote(data['quote']);
-      setAuthor('- ' + data['author']);
+      updateQuote('failure');
     }
     else if (option === 'success') {
-      const data = await getQuote(link, 'success');
-      setQuote(data['quote']);
-      setAuthor('- ' + data['author']);
+      updateQuote('success');
     }
     else if (option === 'depression') {
-      const data = await getQuote(link, 'inspirational');
-      setQuote(data['quote']);
-      setAuthor('- ' + data['author']);
+      updateQuote('inspirational');
     }
     else
       alert('404')
