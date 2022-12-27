@@ -8,6 +8,12 @@
   pointer-events: none;
 }
 
+.transition-color-ease {
+  transition: background-color 2s ease;
+  @apply items-center text-xs;
+
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
