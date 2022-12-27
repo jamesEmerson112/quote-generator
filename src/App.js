@@ -29,7 +29,7 @@ function App() {
   }
 
   return (
-    <div  className={`${bgColor} h-screen flex flex-col items-center justify-center text-white text-xs`} id="quote-box">
+    <div  className={`${bgColor} transition-color-ease h-screen flex flex-col  justify-center`} id="quote-box">
       <QuoteBox changeBgColor={handleClick}/>
     </div>
   );
