@@ -13,37 +13,23 @@ function QuoteBox(props) {
   const [quote, setQuote] = useState('Experience is the teacher of all things.');
   const [author, setAuthor] = useState('- Julis Caesar');
   const changeBgColor = props.changeBgColor;
-  // const [changeBgColor] = props;
-// author
-// :
-// "Robert Frost"
-// category
-// :
-// "inspirational"
-// quote
-// :
-// "The best way out is always through."
-  const  handleClicked = async (option) => {
-    // getting
-  // Make a request for a user with a given ID
-    // const data = await getQuote(linkInspiration);
-    // setQuote(data.quote);
-    // setAuthor(data.author)
+
+  const updateQuote = async (keyword) => {
+    const data = await getQuote(link, keyword);
+    setQuote(data['quote']);
+    setAuthor('- ' + data['author']);
     changeBgColor();
+  }
+
+  const handleClicked = async (option) => {
     if(option === 'rejection') {
-      const data = await getQuote(link, 'failure');
-      setQuote(data['quote']);
-      setAuthor('- ' + data['author']);
+      updateQuote('failure');
     }
     else if (option === 'success') {
-      const data = await getQuote(link, 'success');
-      setQuote(data['quote']);
-      setAuthor('- ' + data['author']);
+      updateQuote('success');
     }
     else if (option === 'depression') {
-      const data = await getQuote(link, 'inspirational');
-      setQuote(data['quote']);
-      setAuthor('- ' + data['author']);
+      updateQuote('inspirational');
     }
     else
       alert('404')
