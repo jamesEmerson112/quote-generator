@@ -6,7 +6,6 @@ import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faQuoteLeft } from '@fortawesome/free-solid-svg-icons';
 
-
 const link = 'https://api.api-ninjas.com/v1/quotes?category=';
 
 function QuoteBox(props) {
@@ -36,20 +35,20 @@ function QuoteBox(props) {
   }
 
   return (
-    <div class="transform-scale-90 relative quote-box" id="quoteBox">
-      <div class="flex text-xl">
+    <div className="transform-scale-90 relative quote-box" id="quoteBox">
+      <div className="flex text-xl">
         <FontAwesomeIcon icon={faQuoteLeft} className="" />
-        <div id="quote-text" class="font-sans font-bold leading-tight">
-          <h3 id="text" class="grid justify-items-center" >{quote}</h3>
+        <div id="quote-text" className="font-sans font-bold leading-tight">
+          <h3 id="text" className="grid justify-items-center" >{quote}</h3>
         </div>
       </div>
-      <p id="author" class="grid justify-items-end mt-2">{author}</p>
+      <p id="author" className="grid justify-items-end mt-2">{author}</p>
       {/* <a id="tweet-quote" href="twitter.com">Tweet Quote</a> */}
-      <div id="buttons" class="flex justify-between mt-6
+      <div id="buttons" className="flex justify-between mt-6
       " >
-        <button id="new-quote-rejection" class="the-buttons" onClick={() => handleClicked('rejection')}>Rejection</button>
-        <button id="new-quote-success" class="the-buttons" onClick={() => handleClicked('success')}>Success</button>
-        <button id="new-quote-depression" class="the-buttons" onClick={() => handleClicked('depression')}>Depression</button>
+        <button id="new-quote-rejection" className="the-buttons" onClick={() => handleClicked('rejection')}>Rejection</button>
+        <button id="new-quote-success" className="the-buttons" onClick={() => handleClicked('success')}>Success</button>
+        <button id="new-quote-depression" className="the-buttons" onClick={() => handleClicked('depression')}>Depression</button>
       </div>
     </div>
   );
@@ -59,7 +58,7 @@ async function getQuote(link, options) {
   const newLink = link + options;
   const response = await axios.get(newLink, {
     headers: {
-      'X-Api-Key': 'A25IAmlOT0YYhJITGzfxOA==mq4LyKJhthB3DSEY'
+      'X-Api-Key': process.env.REACT_APP_X_API_KEY
     }
   })
   return response.data[0];
