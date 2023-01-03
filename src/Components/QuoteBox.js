@@ -6,6 +6,8 @@ import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faQuoteLeft } from '@fortawesome/free-solid-svg-icons';
 
+const API_KEY = process.env.REACT_APP_X_API_KEY;
+
 const link = 'https://api.api-ninjas.com/v1/quotes?category=';
 
 function QuoteBox(props) {
@@ -58,7 +60,7 @@ async function getQuote(link, options) {
   const newLink = link + options;
   const response = await axios.get(newLink, {
     headers: {
-      'X-Api-Key': process.env.REACT_APP_X_API_KEY
+      'X-Api-Key': API_KEY
     }
   })
   return response.data[0];
