@@ -9,7 +9,7 @@
 }
 
 .transition-color-ease {
-  transition: background-color 4s ease;
+  transition: background-color 2s ease;
   @apply items-center text-xs;
 
 }
