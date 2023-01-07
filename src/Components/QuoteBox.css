@@ -15,17 +15,18 @@
   p-1;
 }
 
-test {
-  font-size: xx-small;
-}
-
 .fade-in-text {
   /* trans: background-color 2s ease; */
-  animation: fadeIn 1s;
+  animation: fadeIn 2s;
+}
+
+.fade-in-text-2 {
+  /* trans: background-color 2s ease; */
+  animation: fadeIn 2s;
 }
 
 .fade-out-text {
-  animation: fadeOut 1s;
+  animation: fadeOut 2s;
 }
 
 

@@ -13,7 +13,7 @@ const link = 'https://api.api-ninjas.com/v1/quotes?category=';
 function QuoteBox(props) {
   const [quote, setQuote] = useState('Experience is the teacher of all things.');
   const [author, setAuthor] = useState('- Julis Caesar');
-  const [isToggled, setIsToggled] = useState(false);
+  const [isToggled, setIsToggled] = useState(true);
 
   const changeBgColor = props.changeBgColor;
 
@@ -22,7 +22,10 @@ function QuoteBox(props) {
     setQuote(data['quote']);
     setAuthor('- ' + data['author']);
 
-    setIsToggled(isToggled => !isToggled);
+    setIsToggled(isToggled => true);
+    setTimeout(()=> {
+      setIsToggled(isToggled => false)
+    }, 2000);
     console.log(isToggled);
     changeBgColor();
   }
@@ -47,7 +50,7 @@ function QuoteBox(props) {
       {/* <div className="flex text-xl"> */}
 
         <FontAwesomeIcon icon={faQuoteLeft} className="" />
-        <div id="quote-text" className={"font-sans font-bold leading-tight " + (isToggled ? "text-sm" : "")}>
+        <div id="quote-text" className={"font-sans font-bold leading-tight " + (isToggled ? "fade-in-text" : "")}>
         {/* <div id="quote-text" className={"test"}> */}
 
           <h3 id="text" className="grid justify-items-center" >{quote}</h3>
