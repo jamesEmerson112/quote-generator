@@ -2,12 +2,7 @@
 .quote-box {
   @apply rounded-md text-center
   bg-zinc-100 h-fit w-1/2 p-8 mx-20 mix-blend-screen text-transparent/100 px-10
-  resize-animation
   ;
-}
-
-.resize-animation{
-  /* @apply ; */
 }
 
 .the-buttons{
@@ -18,4 +13,36 @@
   text-white
   w-auto
   p-1;
+}
+
+test {
+  font-size: xx-small;
+}
+
+.fade-in-text {
+  /* trans: background-color 2s ease; */
+  animation: fadeIn 1s;
+}
+
+.fade-out-text {
+  animation: fadeOut 1s;
+}
+
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
