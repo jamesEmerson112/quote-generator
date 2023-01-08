@@ -26,7 +26,6 @@ function QuoteBox(props) {
     setTimeout(()=> {
       setIsToggled(isToggled => false)
     }, 2000);
-    console.log(isToggled);
     changeBgColor();
   }
 
