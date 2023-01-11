@@ -8,7 +8,7 @@ import { faQuoteLeft } from '@fortawesome/free-solid-svg-icons';
 
 const API_KEY = process.env.REACT_APP_X_API_KEY;
 
-const link = 'https://api.api-ninjas.com/v1/quotes?category=';
+const link = process.env.REACT_APP_READ_LINK;
 
 function QuoteBox(props) {
   const [quote, setQuote] = useState('Experience is the teacher of all things.');
