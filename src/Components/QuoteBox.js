@@ -6,9 +6,8 @@ import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faQuoteLeft } from '@fortawesome/free-solid-svg-icons';
 
-const API_KEY = process.env.REACT_APP_X_API_KEY;
-
-const link = process.env.REACT_APP_READ_LINK;
+// TODO: Update this to your deployed backend URL
+const BACKEND_URL = process.env.REACT_APP_BACKEND_URL || 'http://localhost:3030';
 
 function QuoteBox(props) {
   const [quote, setQuote] = useState('Experience is the teacher of all things.');
@@ -18,7 +17,7 @@ function QuoteBox(props) {
   const changeBgColor = props.changeBgColor;
 
   const updateQuote = async (keyword) => {
-    const data = await getQuote(link, keyword);
+    const data = await getQuote(keyword);
     setQuote(data['quote']);
     setAuthor('- ' + data['author']);
 
@@ -67,13 +66,8 @@ function QuoteBox(props) {
   );
 }
 
-async function getQuote(link, options) {
-  const newLink = link + options;
-  const response = await axios.get(newLink, {
-    headers: {
-      'X-Api-Key': API_KEY
-    }
-  })
+async function getQuote(category) {
+  const response = await axios.get(`${BACKEND_URL}/api/quote?category=${encodeURIComponent(category)}`);
   return response.data[0];
 }
 
